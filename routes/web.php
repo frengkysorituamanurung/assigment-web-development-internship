@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('ajax-crud-datatable', [EmployeeController::class, 'index']);
+Route::get('view', [EmployeeController::class, 'view']);
 Route::post('store', [EmployeeController::class, 'store']);
 Route::post('edit', [EmployeeController::class, 'edit']);
 Route::post('delete', [EmployeeController::class, 'destroy']);

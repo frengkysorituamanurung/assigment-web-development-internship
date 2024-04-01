@@ -121,25 +121,27 @@ function add(){
     $('#id').val('');
 }   
 
-function viewFunc(id){
+function viewFunc(id) {
     $.ajax({
-        type:"POST",
+        type: "GET",
         url: "{{ url('view') }}",
         data: { id: id },
         dataType: 'json',
-        success: function(res){
-            $('#EmployeeModal').html("View Employee");
+        success: function(res) {
             $('#employee-modal').modal('show');
+            $('#EmployeeModal').html("View Employee");
             $('#id').val(res.id);
-            $('#name').val(res.name).prop('readonly', true); 
-            $('#address').val(res.address).prop('readonly', true); 
-            $('#email').val(res.email).prop('readonly', true); 
-            $('#delete-compnay').hide(); 
-            $('.edit').hide(); 
+            $('#name').val(res.name).prop('readonly', true);
+            $('#address').val(res.address).prop('readonly', true);
+            $('#email').val(res.email).prop('readonly', true);
+            $('#phone').val(res.phone).prop('readonly', true);
+        },
+        error: function(xhr, status, error) {
+            console.error(xhr.responseText);
+            alert('An error occurred while loading data.');
         }
     });
 }
-
 
 function editFunc(id){
     $.ajax({
