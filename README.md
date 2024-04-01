@@ -68,3 +68,36 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Screenshots
 
 <img src="public/img/screenshot-crud.png">
+
+
+## Installation
+
+First clone this repository, install the dependencies, and setup your .env file.
+
+```
+git clone https://github.com/frengkysorituamanurung/assigment-web-development-internship
+cd  assigment-web-development-internship
+composer install
+cp .env.example .env
+php artisan key:generate
+
+```
+## Settings for Database
+
+```
+//.env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=intern_db
+DB_USERNAME=root
+DB_PASSWORD=
+
+```
+
+## Run Migrate Tabel
+
+```php artisan migrate```
+
+## Run App
+```php artisan serve```
